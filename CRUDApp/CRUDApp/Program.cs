@@ -12,12 +12,13 @@ class Program
 
         users.Add("Luis");
         users.Add("Ana");
+        users.Add("Carlos");
 
         ShowUsers();
 
-        UpdateUser("Luis", "Carlos");
+        DeleteUser("Ana");
 
-        Console.WriteLine("\nDespués de actualizar:");
+        Console.WriteLine("\nDespués de eliminar:");
         ShowUsers();
     }
 
@@ -31,14 +32,11 @@ class Program
         }
     }
 
-    static void UpdateUser(string oldName, string newName)
+    static void DeleteUser(string name)
     {
-        int index = users.IndexOf(oldName);
-
-        if (index != -1)
+        if (users.Remove(name))
         {
-            users[index] = newName;
-            Console.WriteLine("\nUsuario actualizado correctamente");
+            Console.WriteLine("\nUsuario eliminado correctamente");
         }
         else
         {
