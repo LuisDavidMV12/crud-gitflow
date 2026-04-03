@@ -10,11 +10,14 @@ class Program
     {
         Console.WriteLine("Sistema CRUD básico");
 
-        // Agregar usuarios
         users.Add("Luis");
         users.Add("Ana");
 
-        // Mostrar usuarios
+        ShowUsers();
+
+        UpdateUser("Luis", "Carlos");
+
+        Console.WriteLine("\nDespués de actualizar:");
         ShowUsers();
     }
 
@@ -25,6 +28,21 @@ class Program
         foreach (var user in users)
         {
             Console.WriteLine("- " + user);
+        }
+    }
+
+    static void UpdateUser(string oldName, string newName)
+    {
+        int index = users.IndexOf(oldName);
+
+        if (index != -1)
+        {
+            users[index] = newName;
+            Console.WriteLine("\nUsuario actualizado correctamente");
+        }
+        else
+        {
+            Console.WriteLine("\nUsuario no encontrado");
         }
     }
 }
