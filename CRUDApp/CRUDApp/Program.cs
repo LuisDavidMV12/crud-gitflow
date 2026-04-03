@@ -10,11 +10,21 @@ class Program
     {
         Console.WriteLine("Sistema CRUD básico");
 
+        // Agregar usuarios
         users.Add("Luis");
+        users.Add("Ana");
+
+        // Mostrar usuarios
+        ShowUsers();
+    }
+
+    static void ShowUsers()
+    {
+        Console.WriteLine("Lista de usuarios:");
 
         foreach (var user in users)
         {
-            Console.WriteLine("Usuario: " + user);
+            Console.WriteLine("- " + user);
         }
     }
 }
