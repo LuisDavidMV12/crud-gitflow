@@ -12,14 +12,10 @@ class Program
 
         users.Add("Luis");
         users.Add("Ana");
-        users.Add("Carlos");
 
         ShowUsers();
 
-        DeleteUser("Ana");
-
-        Console.WriteLine("\nDespués de eliminar:");
-        ShowUsers();
+        Login("Luis");
     }
 
     static void ShowUsers()
@@ -32,11 +28,11 @@ class Program
         }
     }
 
-    static void DeleteUser(string name)
+    static void Login(string name)
     {
-        if (users.Remove(name))
+        if (users.Contains(name))
         {
-            Console.WriteLine("\nUsuario eliminado correctamente");
+            Console.WriteLine("\nLogin exitoso: " + name);
         }
         else
         {
